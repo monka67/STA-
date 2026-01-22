@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p> Serie di esercizi per comprendere Javascript + html</p>
+   
+    <p>1-Dati 3 numeri in input indicare se i tre numeri sono triade</p>
+        <div>
+            <input type="number" name="n1" id="n1">
+            <input type="number" name="n2" id="n2">
+            <input type="number" name="n3" id="n3">
+<Button onclick="CalcolaTriade()" > Confronta i 3 numeri</Button>
+        </div>
+
+        <p id="risultato"></p>
+<script>
+function maggiore2(a,b){
+    if (a>b)
+      {  return a;  }
+    else
+      {  return b;  }
+}
+function maggiore3(a,b,c){
+    
+    let maggiore=a;
+    if (b>maggiore)
+      {maggiore=b;}
+    if (c>maggiore)
+      {maggiore=c;   }  
+
+    return maggiore;
+
+}
+function Controllo_Se_Triade_Pitagorica(L1,L2,L3)
+{
+ 
+
+let risultato=false;
+let c=0;  
+let q1=L1*L1;
+let q2=L2*L2;
+let q3=L3*L3;
+let max=maggiore3(q1,q2,q3)
+if (max==q1 && q1==q2+q3)
+    risultato=true;
+
+if (max==q2 && q2==q1+q3)
+   risultato=true;
+if (max==q3 && q3==q2+q1)
+   risultato=true;
+
+
+return risultato;
+
+}
+
+function CalcolaTriade(){
+
+
+let num1=parseFloat(document.getElementById("n1").value);
+let num2=parseFloat(document.getElementById("n2").value);  
+let num3=parseFloat(document.getElementById("n3").value);  
+//let max=0;
+//max=maggiore(num1,num2);
+
+//let max3=maggiore3(num1,num2,nume3)
+let checkTriade= false;
+// se true i tre numeroi sono triade pitagorica
+// se false non è triade
+ checkTriade=Controllo_Se_Triade_Pitagorica(num1,num2,num3);
+
+
+document.getElementById("risultato").innerHTML="La terna di numeri "+ num1 + " "+ num2 + " "+ num3 + " terna: "+checkTriade ;
+
+}
+
+
+</script>
