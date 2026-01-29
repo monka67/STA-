@@ -1,0 +1,42 @@
+<html>
+
+    <head>
+        <title> maggiore3</title>
+    </head>
+
+    <body>
+        
+    <p>Trova il maggiore fra 3 numeri</p>
+
+        <div>
+            <input type="number" name="n1" id="n1">
+            <input type="number" name="n2" id="n2">
+            <input type="number" name="n3" id="n3">
+            <button onclick="CalcMax()">trova maggiore</button>
+        </div>
+
+        <script>
+            function Max(a, b, c){
+                let max=a;
+                if (b>max) max=b;
+                if (c>max) max=c;
+
+                return max;
+            }
+            function CalcMax(){
+                let num1=parseFloat(document.getElementById("n1").value);
+                let num2=parseFloat(document.getElementById("n2").value);
+                let num3=parseFloat(document.getElementById("n3").value);
+
+                let max;
+                max = Max(num1, num2, num3)
+
+                document.getElementById("result").innerHTML="il maggiore è "+max;
+            }
+        </script>
+
+         <p id="result"></p>
+
+    </body>
+
+</html>
