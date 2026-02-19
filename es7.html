@@ -3,79 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esercizio 6</title>
-  <style>
-            #lunghezza{
-                    color:blue ;
-                    font-size: 40px;
-                    font-weight: bold;
+    <title>Esercizio 7</title>
+
+        <style>
+                body{
+                    font-family: Arial, Helvetica, sans-serif;
+                    background-color:purple;  
+                    text-align: center;
+                    padding:20px;
+                    
+
                 }
 
-  </style>
+                h1{
+                    margin-bottom:20px ;
+                    color:#ffffff
 
+
+                }
+                .container{
+                    background: rgb(2, 2, 2);
+                    color:rgb(255, 0, 0);
+                    padding: 20px;
+                    border-radius: 5px;
+                }
+                input{
+                     width: 30%;
+                     padding: 8px;
+                     border-radius: 5px;
+                     border: 1px solid #ff0000;
+                }
+               .button {
+  border: none;
+  color: rgb(72, 255, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+        </style>
 
 
 </head>
 <body>
-    <p>Esercizi di esempio di conversioni con le stringhe</p>
-    <input type="text" name="" id="in1"> <br>
+        <p>   <h1>Generatore di frasi casuali (1 parte)</h1>
+        </p>
+<div class="container">
    
-    <button onclick="conversione()"> converti</button>
-    <p id="out"></p>
-      <h1>Risultati:</h1>
-       <p id="maiuscolo"></p>
-       <p id="minuscolo"></p>
-       <p id="lunghezza"></p>
-       <p id="invertita"></p>
-       <p id="spazi"></p>
-       <p id="primocarattere"></p>
-       <p id="secondocarattere"></p> 
-       <p id="ultimocarattere"></p>
+<input type="text" id="soggetto" placeholder="Inserisci Soggetto">
+<input type="text" id="verbo" placeholder="Inserisci Verbo">
+
+<button class="button button2" onclick="aggiungi()">Aggiungi alla lista</button>
    
+      <p>
+         <h3>Liste inserite</h3>
+            <ul id="listaSoggetti"></ul>
+            <ul id="listaVerbi"></ul>
+      </p>
+<button class="button button2" onclick="GeneraFrasi()"> Mescola e genera frasi</button>
 
-<script>
- function conversione(){
-   let testo=document.getElementById("in1").value;
-    document.getElementById("out").innerText="trasformo la seguente stringa "+ testo;
-    document.getElementById("minuscolo").innerText=testo.toUpperCase(0);
-    document.getElementById("maiuscolo").innerText=testo.toLowerCase();
-    document.getElementById("lunghezza").innerText="La lunghezza è:"+testo.length;
-    document.getElementById("invertita").innerText=testo.split("").reverse().join();
-    document.getElementById("spazi").innerText=testo.replaceAll(" "," -");
-    document.getElementById("primocarattere").innerText=testo[0];
-    document.getElementById("secondocarattere").innerText=testo[1];
-    document.getElementById("ultimocarattere").innerText=testo[testo.length-1];
+<div class="frasi" id="output"> </div>
 
 
-}
+</div>
 
 
 
+    <script>
+
+let soggetti=[];
+let verbi=[];
+ function aggiungi(){
+    let soggetto= document.getElementById("soggetto").value;
+    let verbo= document.getElementById("verbo").value;
+    soggetti.push(soggetto);
+    verbi.push(verbo);
+    document.getElementById("listaSoggetti").innerHTML += "<li>Soggetto: " + soggetto + "</li>"
+    document.getElementById("listaVerbi").innerHTML += "<li>Verbo: " + verbo + "</li>"
+ }
 
 
 
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </script>
+   
 </body>
 </html>
