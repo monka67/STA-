@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+    <title></title>
+
+</head>
+
+<body>
+    
+     <h2>Calcolatore kWh</h2>
+
+        <input type="number" id="watt" placeholder="Potenza in Watt">
+        <input type="number" id="ore" placeholder="Ore d'uso giornaliere">
+
+        <button onclick="calcolaKwh()">Calcola</button>
+
+        <p id="risultato">Consumo: 0 kWh</p>
+
+        <script>
+
+            function calcolaKwh(){
+
+                let watt = parseFloat(document.getElementById("watt").value);
+                let ore = parseFloat(document.getElementById("ore").value);
+
+                let Kwh = (watt * ore) / 1000;
+                
+                document.getElementById("risultato").innerHTML = "consumo:" + Kwh + "Kwh"
+            }
+
+        </script>
+
+</body>
+
+</html>
