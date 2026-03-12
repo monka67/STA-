@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pallina{
+            width: 120px;
+            height: 120px;
+            background-color: grey;
+            border-radius: 50%;
+            margin: 20px auto;
+            transition: background-color 0.3s ease;
+
+
+
+
+        }
+        #numero{
+            color: blue;
+            font-size: large;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p>Genero un numero casuale tra 1 e 90</p>
+    <button onclick="generatoreCasuale()" >Genero il numero</button>
+    <div id="numero">----</div>
+
+
+    <div id="pallina"></div>
+    <script>
+        
+        function generatoreCasuale(){
+        let numerocasuale=Math.floor(Math.random()*90)+1;
+        let elemento=document.getElementById("numero");
+        let pallina=document.getElementById("pallina");
+        elemento.innerHTML=numerocasuale;
+         if (numerocasuale<=45)
+            {  
+                pallina.style.backgroundColor="blue";
+            }
+         else
+            {  
+              pallina.style.backgroundColor="red";
+            }
+
+
+
+
+        }
+
+
+        
+       
+    </script>
+
+
+
+
+</body>
+</html>
+
