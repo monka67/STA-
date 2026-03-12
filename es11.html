@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+ <p> inserisci eta</p>
+    <input type="number" id="eta">
+<p> inserisci soldi</p>
+    <input type="number" id="soldi">
+
+<button onclick="regoleDistributore()">compra</button>
+
+    <p id="risultato">.........</p>
+
+<script>
+function regoleDistributore(){
+let eta=document.getElementById("eta").value;
+let soldi=document.getElementById("soldi").value;
+let risultato=document.getElementById("risultato");
+
+     if(eta<18){
+
+      if (soldi>=2){
+      risultato.innerHTML="puoi comprare il succo"
+      }
+     else{
+        risultato.innerHTML="soldi insufficienti"
+     }
+     }
+     else{
+
+       if(soldi>=5)
+          { risultato.innerHTML=" puoi comprare una bibita alcolica"} 
+       else if(soldi>=2)
+       { risultato.innerHTML=" puoi comprare un succo"}
+       else if(soldi>=1)
+       { risultato.innerHTML="puoi comprare acqua"}
+       else{
+         risultato.innerHTML="non puoi comrare nulla"
+       }
+     }
+
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
