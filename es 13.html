@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Calcolo Somma Max</title>
+</head>
+<body>
+
+<h2>Inserisci quattro numeri</h2>
+<input type="number" id="n1" placeholder="Numero a">
+<input type="number" id="n2" placeholder="Numero b">
+<input type="number" id="n3" placeholder="Numero c">
+<input type="number" id="n4" placeholder="Numero d">
+<button onclick="calcolaSomma()">Calcola Somma Massima</button>
+
+<h3 id="risultato"></h3>
+
+<script>
+function calcolaSomma() {
+// Lettura input
+let a = parseInt(document.getElementById('n1').value);
+let b = parseInt(document.getElementById('n2').value);
+let c = parseInt(document.getElementById('n3').value);
+let d = parseInt(document.getElementById('n4').value);
+
+let ad1, ad2;
+
+
+if (a > b) {
+ad1 = a;
+ad2 = b;
+} else {
+ad1 = b;
+ad2 = a;
+}
+
+
+if (c > ad1) {
+ad2 = ad1;
+ad1 = c;
+} else if (c > ad2) {
+ad2 = c;
+}
+
+
+if (d > ad1) {
+ad2 = ad1;
+ad1 = d;
+} else if (d > ad2) {
+ad2 = d;
+}
+
+
+let somma = ad1 + ad2;
+document.getElementById('risultato').innerText =
+"I due numeri maggiori sono " + ad1 + " e " + ad2 +
+". La somma massima è: " + somma;
+}
+</script>
+</body>
+</html>
