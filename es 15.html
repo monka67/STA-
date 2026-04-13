@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<input placeholder="metti importo" id="Cash"><br></br>
+<button onclick="$()">calc</button>
+<p id="ris"></p>
+
+<script>
+function $() {
+
+let x = +document.getElementById("Cash").value;
+
+let banc50 = Math.floor(x / 50);
+x = x % 50;
+
+let banc20 = Math.floor(x / 20);
+x = x % 20;
+
+let banc10 = Math.floor(x / 10);
+x = x % 10
+
+
+document.getElementById("ris").innerHTML= 
+"banconote da 50:" + banc50 + "<br>" +
+"banconote da 20:" + banc20 + "<br>" +
+"banconote da 10:" + banc10;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
