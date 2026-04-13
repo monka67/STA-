@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Ordine crescente</h3>
+
+<input id="a" placeholder="a"><br><br>
+<input id="b" placeholder="b"><br><br>
+<input id="c" placeholder="c"><br><br>
+<input id="d" placeholder="d"><br><br>
+
+<button onclick="controlla()">Controlla</button>
+
+<p id="ris"></p>
+
+<script>
+function controlla() {
+    let a = +document.getElementById("a").value;
+    let b = +document.getElementById("b").value;
+    let c = +document.getElementById("c").value;
+    let d = +document.getElementById("d").value;
+
+    if (a < b && b < c && c < d) {
+        document.getElementById("ris").innerHTML = "Sono in ordine crescente";
+    } else {
+        document.getElementById("ris").innerHTML = "Non sono in ordine crescente";
+    }
+}
+</script>
+
+</body>
+</html>
